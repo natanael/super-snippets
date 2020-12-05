@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <!-- <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css" /> -->
+    <title>Super Snippets</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="header flex-line flex-center flex-start">
+          <h1 class="no-margin">Clipboard Snippets</h1>
+          <p class="no-margin">Put something in your clipboard and hit numpad 0</p>
+        </div>
+      </div>
+      <pre id="in-txt" style="background-color:azure;"></pre>
+      <pre id="out-txt" style="background-color: bisque;"></pre>
+      <div id="button-anchor" class="flex-line">
+      </div>
+    </section>
+    <script src="../dist/renderer.js"></script>
+  </body>
+</html>

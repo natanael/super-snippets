@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'ZillaSlab-Medium';
+  src: url('./fonts/zillaslab/ZillaSlab-Medium.ttf');
+}
+body {
+  font-family: 'ZillaSlab-Medium', sans-serif;
+  color: white;
+  background-color: #111;
+  height: 100vh;
+  margin: 0;
+}
+h1 {
+  padding: 4px 8px 4px 1em;
+  background-color: black;
+  display: inline-block;
+  letter-spacing: 1.5px;
+}
+.header p {
+  padding-left: 1em;
+}
+.no-margin { margin: 0; }
+.flex-line { display: flex; flex-direction: row; }
+.flex-center { align-items: center; }
+.flex-start { justify-content: flex-start; }
+pre {
+  color: black;
+  background-color: bisque;
+  padding: 5px;
+  max-width: 100%;
+  /* max-height: 50px; */
+}
+.button-area {
+  margin-left: 4px;
+  border-left: 4px solid #ffcc33;
+  padding-left: 4px;
+}
+.button-area button {
+  background-color: #111;
+  border: 1px solid #333;
+  color: white;
+  margin: 2px 0;
+  padding: 0;
+}
+.button-area .buttons {
+  display: flex;
+  flex-direction: column;
+}
+.button-area button {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.button-area button:hover {
+  background-color: #321;
+}
+.button-area button .shortcut {
+  background-color: #444;
+  width: 2em;
+  margin-right: 1em;
+}
+.button-area button .shortcut,
+.button-area button .label {
+  padding: 2px 0;
+}
+.button-area button .label {
+  padding-right: 4px;
+}
