@@ -6,7 +6,7 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 600,
-    x: 50,
+    x: 55,
     y: 1000,
     // frame: false,
     webPreferences: {
@@ -18,7 +18,7 @@ function createWindow () {
   mainWindow.loadFile('../static/index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

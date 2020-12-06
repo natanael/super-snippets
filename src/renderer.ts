@@ -1,20 +1,36 @@
 import {windowApi} from './api.type'
+import { SnippetManager } from './renderer/snippet-manager';
+import { Snippet } from './renderer/types';
+import { UiUpdater } from './renderer/ui-updater';
 
 const inTxt$ = document.getElementById('in-txt') as any as HTMLTextAreaElement;
-const outTxt$ = document.getElementById('out-txt')!;
-const buttonAnchor$ = document.getElementById('button-anchor')!;
 inTxt$.innerHTML = windowApi.getSrcContent().join('\n');
-console.log(windowApi.getSrcContent());
 
-document.addEventListener('keypress', (e) => {
-  console.log(e.code);
-  if (e.code == 'Numpad0') {
-    inTxt$.innerHTML = windowApi.getClipboard();
-  }
-  console.log(e.code == 'Numpad1');
-  if (e.code == 'Numpad1') {
-    const newValue = `new value`;
-    outTxt$.innerHTML = newValue;
-    windowApi.setClipboard(newValue);
+const uiUpdater = new UiUpdater();
+const globalSnippetManager = new SnippetManager(uiUpdater);
+document.addEventListener('keypress', (e) => globalSnippetManager.handleKeypress(e));
+
+globalSnippetManager.addSnippet({
+  context: 'Base Actions',
+  name: 'Refresh',
+  keycode: 'Numpad0',
+  shortcutLabel: '0',
+  snippet(text: string) {
+    globalSnippetManager.refresh();
+    return windowApi.getClipboard();
   }
 });
+
+globalSnippetManager.addSnippet({
+  context: 'C++',
+  name: 'cout',
+  keycode: 'Numpad1',
+  shortcutLabel: '1',
+  snippet(text: string) {
+    return text.split('\n').filter(Boolean).map(line => this.perElement(line)).join('\n');
+  },
+  perElement(element: string) { // Forces cast, but keep it organized
+    return `cout << "${element}" << ${element} << endl;`;
+  }
+} as Snippet);
+

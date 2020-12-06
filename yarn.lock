@@ -455,6 +455,13 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
+exec-sh@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.2.2.tgz#2a5e7ffcbd7d0ba2755bdecb16e5a427dfbdec36"
+  integrity sha512-FIUCJz1RbuS0FKTdaAafAByGS0CPvU3R0MeHxgtl+djzCc//F8HakL8GzmVNZanasTbTAY/3DRFA0KpVqj/eAw==
+  dependencies:
+    merge "^1.2.0"
+
 extract-zip@^1.0.3:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-1.7.0.tgz#556cc3ae9df7f452c493a0cfb51cc30277940927"
@@ -817,6 +824,11 @@ matcher@^3.0.0:
   integrity sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng==
   dependencies:
     escape-string-regexp "^4.0.0"
+
+merge@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
+  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
 
 mimic-response@^1.0.0, mimic-response@^1.0.1:
   version "1.0.1"
@@ -1420,6 +1432,14 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+watch@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/watch/-/watch-1.0.2.tgz#340a717bde765726fa0aa07d721e0147a551df0c"
+  integrity sha1-NApxe952Vyb6CqB9ch4BR6VR3ww=
+  dependencies:
+    exec-sh "^0.2.0"
+    minimist "^1.2.0"
 
 which-module@^2.0.0:
   version "2.0.0"
