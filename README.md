@@ -16,7 +16,20 @@ To add some snippets of your own just edit `renderer.ts` and add something like:
     }
   } as Snippet);
 ```
+This snippet in particular turns
+```
+  foo
+  bar
+```
+into
+```c++
+  cout << "foo" << foo << endl;
+  cout << "bar" << bar << endl;
+```
+
+# Usage
 Then you can run this project with `yarn start`.
 If you want to have to have some reloading while you work your snippets use `yarn watch:build` and `yarn watch:run` in different terminals.
 
+# Other
 You can also just strip all out and use it as a sample `Typescript` + `Electron` app, I just didn't script the executable build steps.
