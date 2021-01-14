@@ -1,5 +1,6 @@
 import cp from 'child_process';
 import { clipboard } from 'electron';
+import { snakeCase as _snakeCase } from 'lodash';
 import { windowApi } from './api.type'
 
 windowApi.getSrcContent = () => {
@@ -14,3 +15,5 @@ windowApi.getClipboard = () => {
 windowApi.setClipboard = (value: string) => {
   clipboard.writeText(value);
 };
+
+windowApi.snakeCase = (value: string) => _snakeCase(value);
