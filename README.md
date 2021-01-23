@@ -1,4 +1,4 @@
-# supper-snippets
+# super-snippets
 This is a minimal project to run custom snippets on the clipboard content.
 I did not push this to npm because right now the only way to setup the snippets is to alter its source code.
 To add some snippets of your own just edit `renderer.ts` and add something like:

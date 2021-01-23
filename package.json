@@ -11,8 +11,8 @@
     "watch:build:main": "nodemon --exec \"yarn build:main\"",
     "watch:build:renderer": "nodemon --exec \"yarn build:renderer\"",
     "watch:build:preload": "nodemon --exec \"yarn build:preload\"",
-    "watch:build": "concurrently \"yarn watch:build:main\" \"yarn watch:build:preload\" \"yarn watch:build:renderer\"",
-    "watch:build2": "nodemon -e ts --exec \"yarn build\"",
+    "watch:build:___broken": "concurrently \"yarn watch:build:main\" \"yarn watch:build:preload\" \"yarn watch:build:renderer\"",
+    "watch:build": "nodemon -e ts --exec \"yarn build\"",
     "watch:run": "nodemon dist/index.js --exec electron --watch dist/",
     "start": "yarn && yarn build && electron dist/index.js"
   },
