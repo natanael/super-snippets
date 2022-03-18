@@ -20,7 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^11.0.3",
+    "electron": "^17.1.2",
     "lodash": "^4.17.20"
   },
   "devDependencies": {

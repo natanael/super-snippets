@@ -1,6 +1,7 @@
-import { windowApi } from "../api.type";
+import { API } from "../api.type";
 import { GenericUiUpdater, Snippet } from "./types";
 
+const windowApi = window["windowApi"] as API;
 export class SnippetManager {
   // snippets : {[context: string]: {[name: string]: Snippet}} = {};
   snippets : Array<Snippet> = [];

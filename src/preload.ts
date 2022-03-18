@@ -1,19 +1,22 @@
 import cp from 'child_process';
-import { clipboard } from 'electron';
+import { clipboard, contextBridge } from 'electron';
 import { snakeCase as _snakeCase } from 'lodash';
-import { windowApi } from './api.type'
+import { API } from './api.type'
 
-windowApi.getSrcContent = () => {
-  // return cp.spawn('bash', ['-c', `find src -type f`]).stdout.toString().split('\n');
-  return cp.execSync(`find src -type f`).toString().split('\n');
+const windowApi: API = {
+  getSrcContent: () => {
+    // return cp.spawn('bash', ['-c', `find src -type f`]).stdout.toString().split('\n');
+    return cp.execSync(`find src -type f`).toString().split('\n');
+  },
+  getClipboard: () => {
+    return clipboard.readText('selection');
+  },
+  setClipboard: (value: string) => {
+    clipboard.writeText(value);
+  },
+  snakeCase: (value: string) => _snakeCase(value),
 }
 
-windowApi.getClipboard = () => {
-  return clipboard.readText('selection');
-};
+contextBridge.exposeInMainWorld("windowApi", windowApi);
 
-windowApi.setClipboard = (value: string) => {
-  clipboard.writeText(value);
-};
-
-windowApi.snakeCase = (value: string) => _snakeCase(value);
+console.log('Was PRELOAD ever loaded? Yes');
